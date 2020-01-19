@@ -2,7 +2,7 @@ pragma solidity 0.5.12;
 
 contract Proposal {
     address public proposer;
-    address public govermentContract;
+    address public proposeContract;
     bool public isApproved;
     bool public isValid;
     uint8 public yeses;
@@ -12,19 +12,30 @@ contract Proposal {
     uint256 public expirationDate;
     uint256 public termOfOffice;
     string public url;
+    address public test;
 
-    constructor(address _proposer, address _govermentContract, uint256 _expirationDate, string memory _url) public {
+    constructor(address _proposer, address _proposeContract, uint256 _expirationDate, string memory _url) public {
         proposer = _proposer;
         expirationDate = _expirationDate;
-        govermentContract = _govermentContract;
+        proposeContract = _proposeContract;
         url = _url;
     }
 
-    function ballotForBill() public {
+    modifier onlyProposeContract(address _address) {
+        require(
+            msg.sender == proposeContract,
+            "Sender is invalid"
+        );
+        _;
+    }
+
+    function ballotForBill() public onlyProposeContract(msg.sender) {
+        test = msg.sender;
         yeses++;
     }
 
     function ballotAganistForBill() public {
+        test = msg.sender;
         againist++;
     }
 
