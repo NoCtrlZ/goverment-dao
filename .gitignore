@@ -3,5 +3,5 @@ node_modules
 package-lock.json
 
 # blockchain directory
-blockchain/.openzeppelin/*.json
-blockchain/.openzeppelin/.session
+contracts/.openzeppelin/*.json
+contracts/.openzeppelin/.session
