@@ -1,6 +1,6 @@
 FROM trufflesuite/ganache-cli:latest
 
-RUN npm install -g ganache-cli &&\
+RUN npm install -g ganache-cli truffle &&\
     mkdir -p /var/ganache
 
 ENV DOCKER true

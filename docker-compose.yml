@@ -14,6 +14,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/app
+      - ./contracts/build:/app/build
   rocket:
     build: ./backend
     container_name: rocket
