@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 import List from '../../components/List'
 import { User } from '../../interfaces'
-import { sampleFetchWrapper } from '../../utils/sample-api'
+import { sampleFetchWrapper } from '../../utils/fetch-api'
 
 type Props = {
   items: User[]

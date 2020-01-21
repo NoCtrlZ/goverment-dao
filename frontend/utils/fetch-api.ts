@@ -12,7 +12,7 @@ export const sampleFetchWrapper = async (
   }
 }
 
-export const testFetch = async() => {
+export const testFetch = async () => {
   try {
     const res = await fetch('http://rocket:8000/api/v1')
     const json = await res.json()
