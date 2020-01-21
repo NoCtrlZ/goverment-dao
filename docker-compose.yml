@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ganache:
+    build: ./contracts
+    container_name: ganache
+    ports:
+      - "7545:7545"
+    volumes:
+      - ./contracts:/app
+  next:
+    build: ./frontend
+    container_name: next
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+  rocket:
+    build: ./backend
+    container_name: rocket
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/usr/src/app

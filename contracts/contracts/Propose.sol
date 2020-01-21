@@ -24,9 +24,9 @@ contract Propose {
         return proposal.getYeses();
     }
 
-    function getGovermentContract(address proposalAddress) public view returns(address) {
+    function getProposeContract(address proposalAddress) public view returns(address) {
         Proposal proposal = Proposal(proposalAddress);
-        return proposal.govermentContract();
+        return proposal.proposeContract();
     }
 
     function getTest(address proposalAddress) public view returns(address) {
