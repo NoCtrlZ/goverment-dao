@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import { NextPage } from 'next'
-import { testFetch } from '../utils/fetch-api'
+import { testFetch } from '../utils/tasks/fetch-api'
 import { User } from '../interfaces/index'
 
 const IndexPage: NextPage<User> = ({id, name}) => (
